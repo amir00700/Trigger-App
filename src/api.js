@@ -40,11 +40,22 @@ const upcoming_games =`games?${key_url}&dates=${currentDate},${nextYear}&orderin
 const newGames=`games?${key_url}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
 export  const popularGamesURl=()=> ` ${base_url}${popular_games}`; 
-export const upcomingGamesURL=()=> `${base_url}${upcoming_games}`;
-export const newGamesURL=()=>`${base_url}${newGames}`;
+ export const upcomingGamesURL=()=> `${base_url}${upcoming_games}`;
+ export const newGamesURL=()=>`${base_url}${newGames}`;
 
 //Game details
-export const gameDetailsURL =(game_id)=>`${base_url}games/${game_id}?${key_url}`;
+
+ export const gameDetailsURL =(game_id)=>`${base_url}games/${game_id}?${key_url}`;
+ //games screenshot
+ export const gameScreenshotURL =(game_id)=>`${base_url}games/${game_id}/screenshots?${key_url}`;
+ 
+
+
+
+
+
+
+
 
 
 
