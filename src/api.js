@@ -21,13 +21,18 @@ const getCurrentDay=()=>{
         return day;
     }
 }
+function removeBracket(var1){
+    var1=var1.slice(0,var1.length -1);
+    return var1;
+
+}
 //currentYear
 const currentMonth=getCurrentMonth();
 const currentDay=getCurrentDay();
 const currentYear=new Date().getFullYear();
-const currentDate=`${currentYear}-${currentMonth}-${currentDay}`
-const lastYear=`${currentYear-1}-${currentMonth}-${currentDay}`;
-const nextYear=`${currentYear+1}-${currentMonth}-${currentDay}`;
+const currentDate= removeBracket`${currentYear}-${currentMonth}-${currentDay}`
+const lastYear= removeBracket`${currentYear-1}-${currentMonth}-${currentDay}`;
+const nextYear= removeBracket`${currentYear+1}-${currentMonth}-${currentDay}`;
 const key=`${process.env.REACT_APP_API_KEY}`;
 const key_url=`key=${key}`;
 
