@@ -4,8 +4,13 @@ import {useDispatch,useSelector} from 'react-redux';
 import {loadGames} from '../actions/gamesAction';
 import Game from '../componets/Game';
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import {motion,AnimatePresence,AnimateSharedLayout} from 'framer-motion';
+import {useLocation } from 'react-router-dom';
 const Home = () => {
+
+    const location= useLocation();
+    const pathId=location.pathname.split("/")[2];
+
     //Fetch Games
     const dispatch=useDispatch();
     useEffect(() => {
@@ -16,7 +21,10 @@ const Home = () => {
     
     return (
         <GameList>
-           <GameDetail/>
+            <AnimateSharedLayout  >
+            <AnimatePresence>
+          {pathId && <GameDetail pathId={pathId}/> }
+          </AnimatePresence>
             <h2>Upcoming Games</h2>
             <Games>
                 {upcoming.map(game=>(
@@ -44,6 +52,7 @@ const Home = () => {
                     />
                 ))}
                 </Games>
+                </AnimateSharedLayout>
              </GameList>
                 
             
