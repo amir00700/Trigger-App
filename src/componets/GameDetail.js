@@ -24,7 +24,7 @@ import starFull from "../img/star-full.png";
 
 const GameDetail = ({pathId}) => {
     const history=useHistory();
-    console.log(typeof pathId);
+    
     //exit detail
     const exitDetailhandler=(e)=>{
         const element=e.target;
@@ -37,7 +37,7 @@ const GameDetail = ({pathId}) => {
 
     //get stars function
 
-    const getStarts =()=>{
+    const getStars =()=>{
         const stars=[];
         const rating=Math.floor(game.rating);
         for (let i=1;  i<=5; i++){
@@ -72,48 +72,57 @@ const GameDetail = ({pathId}) => {
     }
 
     //data
-    const {game,screen, isLoading}=useSelector((state)=>state.detail);
-    return (
-        <>
-        {!isLoading && (
-            <CardShadow className='shadow' onClick={exitDetailhandler}>
-                <Detail layoutId={pathId}>
-                    <Stats>
-                        <div className="rating">
-                            <motion.h3 layoutId ={`title ${pathId}`}>{game.name}</motion.h3>
-                            <p>Rating:{game.rating}</p>
-                            {getStarts()}
-                        </div>
-                        <Info>
-                            <h3>Platforms</h3>
-                            <Platforms>
-                                {game.platforms.map((data)=>(
-                                <img key={data.platform.id}
-                                src={getPlatform(data.platform.name)}></img>
-                                ))}
-                            </Platforms>
-                        </Info>
-                    </Stats>
-                    <Media>
-                        < motion.img layoutId={`image ${pathId}`}  src={smallImage(game.background_image,1280)} alt="image"/> 
-                    </Media>
-                    <Description>
-                        <p>{game.description_raw}</p>
-                    </Description>
-
-                    <div className="gallery">
-                    {screen.results.map(screen =>(
-                        <img src={smallImage(screen.image,1280)} key={screen.id} alt="game"/>
-                    ))}
-                    </div>
-
-                </Detail>
-            </CardShadow>
-            )}
-            
-        </>
-    )
-}
+      //Data
+  const { screen, game, isLoading } = useSelector((state) => state.detail);
+  return (
+    <>
+      {!isLoading && (
+        <CardShadow className="shadow" onClick={exitDetailhandler}>
+          <Detail>
+            <Stats>
+              <div className="rating">
+                <h3>{game.name}</h3>
+                <p>Rating: {game.rating}</p>
+                {getStars()}
+              </div>
+              <Info>
+                <h3>Platforms</h3>
+                <Platforms>
+                  {game.platforms.map((data) => (
+                    <img
+                      alt={data.platform.name}
+                      key={data.platform.id}
+                      src={getPlatform(data.platform.name)}
+                    ></img>
+                  ))}
+                </Platforms>
+              </Info>
+            </Stats>
+            <Media>
+              <img
+               
+                src={smallImage(game.background_image, 1280)}
+                alt={game.background_image}
+              />
+            </Media>
+            <Description>
+              <p>{game.description_raw}</p>
+            </Description>
+            <div className="gallery">
+              {screen.results.map((screen) => (
+                <img
+                  src={smallImage(screen.image, 1280)}
+                  key={screen.id}
+                  alt={screen.image}
+                />
+              ))}
+            </div>
+          </Detail>
+        </CardShadow>
+      )}
+    </>
+  );
+};
 
 const CardShadow =styled(motion.div)`
 width:100%;

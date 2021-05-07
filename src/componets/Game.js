@@ -10,29 +10,34 @@ import {Link} from 'react-router-dom';
 import {smallImage} from '../util';
 import {popup} from '../animation';
 
-
-const Game = ({name,released,image,id}) => {
-    //load detail handler
-    const stringPathId=id.toString();
-
-    const dispatch=useDispatch();
-    const loadDetailHandler=()=>{
-        document.body.style.overflow='hidden';
-        dispatch(loadDetail(id));
-        console.log(typeof id)
-      
-
-    }
+const Game = ({ name, released, image, id }) => {
+   
+    //Load Detail Handler
+    const dispatch = useDispatch();
+    const loadDetailHandler = () => {
+      document.body.style.overflow = "hidden";
+      dispatch(loadDetail(id));
+    };
+  
     return (
-        <StyledGame variants={popup} initial='hidden' animate='show'layoutId={stringPathId} onClick={loadDetailHandler}>
-            <Link to={`/game/${id}`}>
-            <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
-            <p>{released}</p>
-            <motion.img  layoutId = {`image ${stringPathId}`}src={smallImage(image,640)} alt="{name}"/>
-            </Link>
-        </StyledGame>
-    )
-}
+      <StyledGame
+        variants={popup}
+        initial="hidden"
+        animate="show"
+        onClick={loadDetailHandler}
+      >
+        <Link to={`/game/${id}`}>
+          <h3 >{name}</h3>
+          <p>{released}</p>
+          <img
+           
+            src={smallImage(image, 640)}
+            alt={name}
+          />
+        </Link>
+      </StyledGame>
+    );
+  };
 
 const StyledGame=styled(motion.div)`
 min-height:30vh;
