@@ -69,17 +69,26 @@ button{
 
 }
 
+@media (max-width: 900px){
+    padding-top:0;
+input {
+    width:50%;
+    font-size:0.8rem;
+  
+}
+button{
+    font-size:0.8rem;  
+}
+}
 `
 
 const Logo=styled(motion.div)`
 display:flex;
 justify-content:center;
 padding: 1rem;
-cursor:pointer-events;
-
-
-
+cursor:pointer;
 `
+
 
 export default Nav
 

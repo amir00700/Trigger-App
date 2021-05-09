@@ -22,14 +22,11 @@ const Home = () => {
     
     return (
         <GameList variants={fadeIn} initilal='hidden' animate='show'>
-            
           {pathId && <GameDetail pathId={pathId}/> }
-      
           {searched.length ? (
           <div className="searched">
           <h2>Searched Games</h2>
           <Games>
-         
           {searched.map(game=>(
                     <Game name={game.name} released={game.released} id={game.id}
                     image={game.background_image}
@@ -40,9 +37,7 @@ const Home = () => {
                 </div>
           )
                :'' }
-
-           
-            <h2>Upcoming Games</h2>
+           <h2>Upcoming Games</h2>
             <Games>
                 {upcoming.map(game=>(
                     <Game name={game.name} released={game.released} id={game.id}
@@ -69,19 +64,22 @@ const Home = () => {
                     />
                 ))}
                 </Games>
-            
-             </GameList>
-                
-            
-            
-        
+             </GameList>         
     )
 }
 
 const GameList =styled(motion.div)`
+margin-top:0;
 padding:0rem 5rem;
 h2{
     padding:5rem 0rem;
+}
+@media (max-width: 900px){
+  padding:0rem 3rem;
+    h2{
+        padding:1rem 1rem;
+    }
+    
 }
 `
 
@@ -91,7 +89,15 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
 grid-column-gap:3rem;
 grid-row-gap:5rem;
+@media (max-width: 900px){
+    padding-top:0;
+    min-height:50vh;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-row-gap:1rem;
+    
 `
+
 export default Home
 
 

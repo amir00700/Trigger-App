@@ -50,8 +50,19 @@ img{
     width:100%;
     height:40vh;
     object-fit:cover;
+    padding-left:0;
 
 }
+@media (max-width: 900px){
+
+  img{
+    width:100%;
+    height:30vh;
+   object-fit:cover;
+
+}
+}
+
 
 `
 

@@ -141,7 +141,9 @@ left:0;
 &::-webkit-scrollbar-track{
     background:white;
 }
-
+@media (max-width: 900px){
+  
+}
 `
 
 const Detail=styled(motion.div)`
@@ -156,6 +158,12 @@ z-index:10;
 img{
     width:100%;
 }
+@media (max-width: 900px){
+  
+padding:1rem 1rem;
+
+}
+
 `
 const Stats=styled(motion.div)`
 display:flex;
@@ -166,9 +174,20 @@ img{
     height:2rem;
     display:inline;
 }
+@media (max-width: 900px){
+  display: inline;
+  img{
+    width:8%;
+    
+  }
+
+}
 `
 const Info=styled(motion.div)`
 text-align:center;
+@media (max-width: 900px){
+  text-align:left;
+  }
 `
 const Platforms=styled(motion.div)`
 display:flex;
@@ -176,6 +195,13 @@ justify-content:space-evenly;
 img{
     margin-left:3rem;
 }
+@media (max-width: 900px){
+  
+  img{
+    width:20px;
+    margin-left:1rem;
+  }
+  }
 `
 const Media=styled(motion.div)`
 margin-top:5rem;
@@ -184,6 +210,13 @@ img{
     width:100%;
     object-fit:cover;
 }
+@media (max-width: 900px){
+  
+ p{
+   padding-top:0rem;
+ }
+  
+  }
 `
 const Description=styled(motion.div)`
 margin: 5rem 0rem;

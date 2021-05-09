@@ -47,5 +47,19 @@ img{
         font-weight:bold;
         font-family:"Montserrat", sans-serif;
     }
+
+ @media (max-width: 900px){
+    h2{
+        font-size:1.5rem;
+    }
+    h3{
+        font-size:1.3rem;
+    }
+    p{
+        font-size:1rem;
+        line-height:200%;  
+    }
+
+ }
 `
 export default GlobalStyles;
