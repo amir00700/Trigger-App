@@ -54,7 +54,7 @@ input{
     padding:0.5rem;
     border:none;
     margin-top: 1rem;
-    box-shadow:0px 0px 30px rgba(0,0,0,0.2);
+    box-shadow:0px 0px 20px gray ;
     outline:none;
     font-weight:bold;    
 }
@@ -63,25 +63,22 @@ button{
     border:none;
     padding:0.5rem 2rem;
     cursor:pointer;
-    background:#4CAF50;
+    background:gray;;
     color:white;
-
-
 }
 
 @media (max-width: 900px){
     padding-top:0;
 input {
-    width:50%;
+    width:35%;
     font-size:0.8rem;
-  
+    border:0.5px solid gray;
 }
-button{
-    font-size:0.8rem;  
+button{  
+  font-size:0.8rem;
 }
 }
 `
-
 const Logo=styled(motion.div)`
 display:flex;
 justify-content:center;

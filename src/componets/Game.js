@@ -30,7 +30,6 @@ const Game = ({ name, released, image, id }) => {
           <h3 >{name}</h3>
           <p>{released}</p>
           <img
-           
             src={smallImage(image, 640)}
             alt={name}
           />
@@ -51,18 +50,26 @@ img{
     height:40vh;
     object-fit:cover;
     padding-left:0;
-
 }
 @media (max-width: 900px){
-
+h3{
+  font-size:1rem;
+  padding-top:0;
+  padding-bottom:0;
+}
+p{
+  font-size:.5rem;
+}
   img{
     width:100%;
-    height:30vh;
-   object-fit:cover;
-
+    height:40vh;
+    object-fit:cover;
+    padding-left:0;
+   
 }
-}
 
+   
+}
 
 `
 

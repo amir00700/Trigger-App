@@ -142,7 +142,6 @@ left:0;
     background:white;
 }
 @media (max-width: 900px){
-  
 }
 `
 
@@ -158,12 +157,9 @@ z-index:10;
 img{
     width:100%;
 }
-@media (max-width: 900px){
-  
+@media (max-width: 900px){ 
 padding:1rem 1rem;
-
 }
-
 `
 const Stats=styled(motion.div)`
 display:flex;

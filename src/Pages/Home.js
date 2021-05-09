@@ -89,13 +89,13 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
 grid-column-gap:3rem;
 grid-row-gap:5rem;
-@media (max-width: 900px){
+@media (max-width: 800px){
     padding-top:0;
     min-height:50vh;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(200px,2fr));
     grid-row-gap:1rem;
-    
+}   
 `
 
 export default Home
